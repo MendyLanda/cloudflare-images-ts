@@ -68,7 +68,7 @@ export interface Query<T>
 export const baseUrl = `https://api.cloudflare.com/client/v4`;
 
 export function createFetch<I extends FetchInit>(
-  init: I
+  init: I,
 ): {
   response: <R>() => (...args: Parameters<I>) => Promise<R>;
   query: <R>() => (...args: Parameters<I>) => Query<R>;
@@ -204,7 +204,7 @@ export function createFetch<I extends FetchInit>(
 
         return Object.assign(
           promise.then(() => result),
-          result
+          result,
         );
       };
     },

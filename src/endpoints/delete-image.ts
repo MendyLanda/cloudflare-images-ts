@@ -32,7 +32,7 @@ const deleteImageFetch = createFetch(
     method: httpMethods.DELETE,
     url: `${baseUrl}/accounts/${credentials.accountIdentifier}/images/v1/${identifier}`,
     credentials,
-  })
+  }),
 );
 
 /**
@@ -40,7 +40,7 @@ const deleteImageFetch = createFetch(
  */
 export function deleteImage(
   credentials: Credentials,
-  params: DeleteImageRequest
+  params: DeleteImageRequest,
 ): Promise<DeleteImageResponse> {
   return deleteImageFetch.response<DeleteImageResponse>()({
     credentials,

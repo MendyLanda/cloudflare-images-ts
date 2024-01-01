@@ -15,7 +15,7 @@ export class ImagesClient {
     listImages(this.credentials, params);
 
   createDirectUploadUrl = (
-    params: EndpointParams<typeof createDirectUploadUrl>
+    params: EndpointParams<typeof createDirectUploadUrl>,
   ) => createDirectUploadUrl(this.credentials, params);
 
   updateImage = (params: EndpointParams<typeof updateImage>) =>
