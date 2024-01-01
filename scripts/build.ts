@@ -3,7 +3,7 @@ import url from "node:url";
 import { build as esbuild } from "esbuild";
 
 const srcPath = path.join(process.cwd(), "src");
-const buildPath = path.join(process.cwd(), "build");
+const buildPath = path.join(process.cwd(), "dist");
 
 async function build() {
   return esbuild({

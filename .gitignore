@@ -1,4 +1,6 @@
 build/
+dist/
 node_modules/
 coverage/
 .DS_Store
+trimmed.d.ts

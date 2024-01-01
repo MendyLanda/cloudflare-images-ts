@@ -32,18 +32,15 @@ const deleteImageFetch = createFetch(
     method: httpMethods.DELETE,
     url: `${baseUrl}/accounts/${credentials.accountIdentifier}/images/v1/${identifier}`,
     credentials,
-  }),
+  })
 );
 
 /**
  * Deletes an image
- * @param {Credentials} credentials - The credentials
- * @param {DeleteImageRequest} params - The request parameters
- * @returns {Promise<DeleteImageResponse>} - A promise that resolves to the response of the delete image operation
  */
 export function deleteImage(
   credentials: Credentials,
-  params: DeleteImageRequest,
+  params: DeleteImageRequest
 ): Promise<DeleteImageResponse> {
   return deleteImageFetch.response<DeleteImageResponse>()({
     credentials,

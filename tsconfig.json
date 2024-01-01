@@ -7,7 +7,7 @@
     "moduleResolution": "nodenext",
 
     "rootDir": "./src",
-    "outDir": "build",
+    "outDir": "dist",
 
     "strict": true,
     "noUncheckedIndexedAccess": true,

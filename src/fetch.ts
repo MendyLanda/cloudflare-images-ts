@@ -21,7 +21,7 @@ export type Credentials = { accountIdentifier: string } & (
     }
 );
 
-type FetchOptions = {
+export type FetchOptions = {
   method: HttpMethod;
   url: URL | string;
   searchParams?: Record<string, unknown>;
@@ -36,7 +36,7 @@ type FetchOptions = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type FetchInit = (...args: ReadonlyArray<any>) => FetchOptions;
+export type FetchInit = (...args: ReadonlyArray<any>) => FetchOptions;
 
 export type Params = Record<string, unknown> | string;
 
@@ -52,7 +52,7 @@ export interface Response {
   messages: Message[];
 }
 
-interface QueryResponse<T> extends AsyncIterable<T> {
+export interface QueryResponse<T> extends AsyncIterable<T> {
   all: () => Promise<Array<T>>;
   first: () => Promise<T | undefined>;
   totalCount: number;
@@ -68,7 +68,7 @@ export interface Query<T>
 export const baseUrl = `https://api.cloudflare.com/client/v4`;
 
 export function createFetch<I extends FetchInit>(
-  init: I,
+  init: I
 ): {
   response: <R>() => (...args: Parameters<I>) => Promise<R>;
   query: <R>() => (...args: Parameters<I>) => Query<R>;
@@ -204,7 +204,7 @@ export function createFetch<I extends FetchInit>(
 
         return Object.assign(
           promise.then(() => result),
-          result,
+          result
         );
       };
     },
